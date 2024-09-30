@@ -7,7 +7,7 @@ public class Main {
         String myName = "Nastya";
         String mySurname = "Babanskaya";
         String myNationality = "BY";
-        String myAge = "";
+        String myCat = "";
         String myString = "Buna ziua";
 
         String infoaboutme = String.format("\nMy name: %s\nMy Surname: %s\nMy Nationality: %s\n",
@@ -31,7 +31,7 @@ public class Main {
         String anotherName = "Nasta";
 
         StringBuffer buffer = new StringBuffer("\nMy anotherName: ");
-        buffer.append("Nasta");
+        buffer.append(anotherName);
 
 
         System.out.println(infoaboutme);
@@ -46,7 +46,7 @@ public class Main {
 
 
         System.out.println(myName.length());
-        System.out.println(myAge.isEmpty());
+        System.out.println(myCat.isEmpty());
         System.out.println(myName.charAt(3));
         System.out.println(myName.equals(anotherName));
         System.out.println(myName.equalsIgnoreCase(anotherName));
@@ -54,7 +54,7 @@ public class Main {
         System.out.println(myName.endsWith("ta"));
         System.out.println(myString.contains("Buna"));
         System.out.println(myNationality.replace('Y','y'));
-        System.out.println(myAge.replace("","17"));
+        System.out.println(myCat.replace("","Сami"));
         System.out.println(myNationality.toLowerCase());
         System.out.println(buffer);
     }
