@@ -1,19 +1,21 @@
-import java.util.Scanner;
+import clothes.Jacket;
+import clothes.Shirt;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Shirt blackShirt = new Shirt("black","XS","cotton", 5.00, "EUR");
 
-        Buttons brownButtons = new Buttons("small", "brown", "square", "wood");
+        Shirt blackShirt = new Shirt("black", "XS", "cotton", "average","brown",
+                "square", "wood", true, 14.50, "EUR");
+
+        Jacket beigeJacket = new Jacket("beige","S","tweed", "long", false,
+                false, true,28.90, "EUR");
 
 
+        String shirtColor = blackShirt.getColor();
+        System.out.println(shirtColor);
 
-        System.out.println("\nBlack Shirt\n" + "Color: " + blackShirt.getColor() + "\nSize: " + blackShirt.getSize() +
-                "\nMaterial: " + blackShirt.getMaterial() + "\n\nButtons" + "\nSize: " + brownButtons.getSize() +
-                "\nColor: " + brownButtons.getColor() + "\nShape: " + brownButtons.getShape() + "\nMaterial: "
-                + brownButtons.getMaterial() + "\n\nPrise: " + blackShirt.priсe + " " + blackShirt.getCurrency());
 
 
     }
