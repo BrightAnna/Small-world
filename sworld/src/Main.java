@@ -2,60 +2,107 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
-        String myName = "Nastya";
-        String mySurname = "Babanskaya";
-        String myNationality = "BY";
-        String myCat = "";
-        String myString = "Buna ziua";
 
-        String infoaboutme = String.format("\nMy name: %s\nMy Surname: %s\nMy Nationality: %s\n",
-                myName, mySurname, myNationality);
+        System.out.println("Please enter your score");
+        Scanner scanner = new Scanner(System.in);
+        int score = scanner.nextInt();
 
-        byte month = 9;
-        short phoneCode = 375;
-        int year = 2024;
-        int nextyear = 2025;
-        long customerID = 60002080;
-        float floatNr = 7.8f;
-        double doubleNr = 7.4;
-        boolean checkYear = year == nextyear;
-        char charNr = 'Y';
+        while (score < 0 || score > 100) {
+            System.out.println("The value is invalid. Please try again.");
+            score = scanner.nextInt();
+        }
 
-        System.out.print("Please enter something: ");
+        if (score >= 90) {
+            System.out.println("Your great is A");
+        } else if (score >= 80) {
+            System.out.println("Your great is B");
+        } else if (score >= 70) {
+            System.out.println("Your great is C");
+        } else if (score >= 60) {
+            System.out.println("Your great is D");
+        } else if (score >= 50) {
+            System.out.println("Your great is E");
+        } else System.out.println("Your great is F");
+
+        System.out.println("Keep it up");
+
+
+        whileOperator();
+        sumOfNambers();
+        remoteControl();
+
+    }
+
+    public static void whileOperator() {
+
+        String userInput = "";
+        Scanner scanner = new Scanner(System.in);
+
+        while (!userInput.equals("Exit")) {
+            System.out.println("Please enter something");
+            userInput = scanner.nextLine();
+            System.out.println("Great!");
+
+        }
+        System.out.println("You are lucky guy! Goodbye");
+
+    }
+
+    public static void sumOfNambers(){
 
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
+        System.out.println("Please enter a number");
 
-        String anotherName = "Nasta";
+        int userInput = scanner.nextInt();
+        int sum = 0;
 
-        StringBuffer buffer = new StringBuffer("\nMy anotherName: ");
-        buffer.append(anotherName);
-
-
-        System.out.println(infoaboutme);
-        System.out.println(month);
-        System.out.println(phoneCode);
-        System.out.println(year);
-        System.out.println(customerID);
-        System.out.println(floatNr);
-        System.out.println(doubleNr);
-        System.out.println(checkYear);
-        System.out.println(charNr);
+        for(int i = 0; i <= userInput; i++) {
+            sum += i;
+        }
 
 
-        System.out.println(myName.length());
-        System.out.println(myCat.isEmpty());
-        System.out.println(myName.charAt(3));
-        System.out.println(myName.equals(anotherName));
-        System.out.println(myName.equalsIgnoreCase(anotherName));
-        System.out.println(myName.startsWith("Nas"));
-        System.out.println(myName.endsWith("ta"));
-        System.out.println(myString.contains("Buna"));
-        System.out.println(myNationality.replace('Y','y'));
-        System.out.println(myCat.replace("","Сami"));
-        System.out.println(myNationality.toLowerCase());
-        System.out.println(buffer);
+        for(int i = 0; i >= userInput; i--) {
+            sum += i;
+        }
+        System.out.printf("Sum of numbers from 0 to %d is %d\n", userInput, sum);
+        System.out.println("Thanks. Bye");
+
     }
+
+    public static void remoteControl() {
+
+        String[] tvChannels = new String[6];
+        tvChannels[0] = "TV1000";
+        tvChannels[1] = "TV1000Action";
+        tvChannels[2] = "Sony Sci-fi";
+        tvChannels[3] = "FOX";
+        tvChannels[4] = "MuzTV";
+        tvChannels[5] = "DiscoveryTV";
+
+        System.out.println("Please choose a channel");
+        Scanner scanner = new Scanner(System.in);
+        int userInput = scanner.nextInt();
+
+        while (userInput != 0){
+
+            if (userInput > tvChannels.length) {
+                System.out.println("Wrong channel");
+            } else {
+                System.out.println(tvChannels[userInput - 1]);
+            }
+
+            System.out.println("Please choose a channel");
+            userInput = scanner.nextInt();
+
+            System.out.println("Exit");
+
+
+        }
+
+    }
+
+
 }
