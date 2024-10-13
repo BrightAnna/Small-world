@@ -1,35 +1,33 @@
 package clothes;
 
+import enums.ButtonColor;
+import enums.ButtonMaterial;
+import enums.ButtonSize;
+
 public class Buttons {
 
-    private String buttonSize;
-    private String buttonColor;
-    private String buttonShape;
-    private String buttonMaterial;
+    private ButtonSize buttonSize;
+    private ButtonColor buttonColor;
+    private ButtonMaterial buttonMaterial;
     boolean haveSleevesButtons;
 
-    public Buttons(String buttonSize, String buttonColor, String buttonShape, String buttonMaterial,
-                   boolean haveSleevesButtons){
+    public Buttons(ButtonSize buttonSize, ButtonColor buttonColor, ButtonMaterial buttonMaterial,
+                   boolean haveSleevesButtons) {
         this.buttonSize = buttonSize;
         this.buttonColor = buttonColor;
-        this.buttonShape = buttonShape;
         this.buttonMaterial = buttonMaterial;
         this.haveSleevesButtons = haveSleevesButtons;
     }
 
-    public String getButtonSize() {
+    public ButtonSize getButtonSize() {
         return buttonSize;
     }
 
-    public String getButtonColor() {
+    public ButtonColor getButtonColor() {
         return buttonColor;
     }
 
-    public String getButtonShape() {
-        return buttonShape;
-    }
-
-    public String getButtonMaterial() {
+    public ButtonMaterial getButtonMaterial() {
         return buttonMaterial;
     }
 

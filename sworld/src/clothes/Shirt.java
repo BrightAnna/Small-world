@@ -1,37 +1,38 @@
 package clothes;
 
+import enums.*;
+
 public class Shirt extends ClothesItems {
 
-    private String color;
-    private String size;
-    private String material;
+    private ShirtColor color;
+    private ShirtSize size;
+    private ShirtMaterial material;
     private Buttons buttons;
 
 
-
-    public Shirt (String color, String size, String material, String buttonSize, String buttonColor, String buttonShape,
-                  String buttonMaterial, boolean haveSleevesButtons, double price, String currency) {
+    public Shirt(ShirtColor color, ShirtSize size, ShirtMaterial material, ButtonSize buttonSize, ButtonColor buttonColor,
+                 ButtonMaterial buttonMaterial, boolean haveSleevesButtons, double price, String currency) {
         this.color = color;
         this.size = size;
         this.material = material;
-        this.buttons = new Buttons(buttonSize, buttonColor, buttonShape, buttonMaterial, haveSleevesButtons);
-        this.price = price + price * 10;
+        this.buttons = new Buttons(buttonSize, buttonColor, buttonMaterial, haveSleevesButtons);
+        this.price = price;
         this.currency = currency;
 
     }
 
-    public String getColor() {
+    public ShirtColor getColor() {
+
         return color;
     }
 
-    public String getMaterial() {
-        return material;
-    }
-
-    public String getSize() {
+    public ShirtSize getSize() {
         return size;
     }
 
+    public ShirtMaterial getMaterial() {
+        return material;
+    }
 
 
 }
