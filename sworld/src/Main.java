@@ -29,6 +29,8 @@ public class Main {
         while (userInput != 0) {
             if (userInput > 2) {
                 System.out.println("Wrong option. Try again");
+            } else if (userInput < 0) {
+                System.out.println("Wrong option. Try again");
             } else if (userInput == 2) {
                 readFromFile();
             } else if (userInput == 1) {
@@ -48,32 +50,32 @@ public class Main {
 
             FileWriter userFile = new FileWriter("C:\\Users\\AnastasiaBabanskay\\ufile.txt");
 
-            shirtColor();
+            FileUtils.shirtColor();
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            shirtSize();
+            FileUtils.shirtSize();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            shirtMaterial();
+            FileUtils.shirtMaterial();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            buttonSize();
+            FileUtils.buttonSize();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            buttonColor();
+            FileUtils.buttonColor();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            buttonMaterial();
+            FileUtils.buttonMaterial();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
-            TwoButtonsOnSleeves();
+            FileUtils.twoButtonsOnSleeves();
             input = scanner.nextLine();
             userFile.write(input + "\n");
 
@@ -96,13 +98,14 @@ public class Main {
                 dataFromFile.add(filescanner.nextLine());
             }
 
-            System.out.println("My shirt" + "\nShirt color: " + dataFromFile.get(0) + "\nShirt size: " + dataFromFile.get(1) +
-                    "\nShirt material: " + dataFromFile.get(2) + "\nButton size: " + dataFromFile.get(3) +
-                    "\nButton color: " + dataFromFile.get(4) + "\nButton material: " + dataFromFile.get(5) +
-                    "\nSleeves have buttons: " + dataFromFile.get(6));
+            String myShirt = String.format("\nShirt color: %s \nShirt size: %s \nShirt material: %s" +
+                            "\nButton size: %s \nButton color: %s\nButton material: %s \nSleeves have buttons: %s",
+                    dataFromFile.get(0), dataFromFile.get(1), dataFromFile.get(2), dataFromFile.get(3), dataFromFile.get(4),
+                    dataFromFile.get(5), dataFromFile.get(6));
+
+            System.out.println("My shirt" + myShirt);
 
             System.out.println("=============================");
-
 
         } catch (FileNotFoundException e) {
             System.out.println("Sorry, file doesn't exist. Create a file first");
@@ -110,59 +113,5 @@ public class Main {
         }
 
     }
-
-    public static void shirtColor() {
-        System.out.println("Choose the shirt color:");
-        for (ShirtColor shirtColor : ShirtColor.values()) {
-            System.out.println(shirtColor);
-        }
-
-    }
-
-    public static void shirtSize() {
-        System.out.println("Choose the shirt size:");
-        for (ShirtSize shirtsize : ShirtSize.values()) {
-            System.out.println(shirtsize);
-        }
-
-    }
-
-    public static void shirtMaterial() {
-        System.out.println("Choose the shirt material:");
-        for (ShirtMaterial shirtMaterial : ShirtMaterial.values()) {
-            System.out.println(shirtMaterial);
-        }
-
-    }
-
-    public static void buttonSize() {
-        System.out.println("Choose the buttons size:");
-        for (ButtonSize buttonSize : ButtonSize.values()) {
-            System.out.println(buttonSize);
-        }
-
-    }
-
-    public static void buttonColor() {
-        System.out.println("Choose the buttons color:");
-        for (ButtonColor buttonColor : ButtonColor.values()) {
-            System.out.println(buttonColor);
-        }
-
-    }
-
-    public static void buttonMaterial() {
-        System.out.println("Choose the buttons material:");
-        for (ButtonMaterial buttonColor : ButtonMaterial.values()) {
-            System.out.println(buttonColor);
-        }
-
-    }
-
-    public static void TwoButtonsOnSleeves() {
-        System.out.println("Do sleeves have buttons? \nWrite: YES or NO");
-
-    }
-
 
 }
