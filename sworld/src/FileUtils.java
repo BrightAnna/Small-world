@@ -1,10 +1,5 @@
 import enums.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class FileUtils {
 
     public static void shirtColor() {
@@ -57,33 +52,6 @@ public class FileUtils {
 
     public static void twoButtonsOnSleeves() {
         System.out.println("Do sleeves have buttons? \nWrite: YES or NO");
-
-    }
-
-    public static void readFromFile() {
-        try {
-            File userfile = new File("C:\\Users\\AnastasiaBabanskay\\ufile.txt");
-            Scanner filescanner = new Scanner(userfile);
-            ArrayList<String> dataFromFile = new ArrayList<>();
-
-
-            while (filescanner.hasNextLine()) {
-                dataFromFile.add(filescanner.nextLine());
-            }
-
-            String myShirt = String.format("\nShirt color: %s \nShirt size: %s \nShirt material: %s" +
-                            "\nButton size: %s \nButton color: %s\nButton material: %s \nSleeves have buttons: %s",
-                    dataFromFile.get(0), dataFromFile.get(1), dataFromFile.get(2), dataFromFile.get(3), dataFromFile.get(4),
-                    dataFromFile.get(5), dataFromFile.get(6));
-
-            System.out.println("My shirt" + myShirt);
-
-            System.out.println("=============================");
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Sorry, file doesn't exist. Create a file first");
-
-        }
 
     }
 }
