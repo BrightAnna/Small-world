@@ -85,7 +85,6 @@ public class Main {
             System.out.println("Sorry, cannot write to file. Write something else");
 
         }
-
     }
 
 }
