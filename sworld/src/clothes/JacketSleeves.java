@@ -16,7 +16,7 @@ public class JacketSleeves {
         return sleevesLength;
     }
 
-    public Boolean getSleevesButtons() {
+    public boolean getSleevesButtons() {
         return sleevesButtons;
     }
 

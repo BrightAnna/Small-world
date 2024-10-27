@@ -21,8 +21,15 @@ public class Shirt extends ClothesItems {
 
     }
 
-    public ShirtColor getColor() {
+    public Shirt(ShirtColor color) {
+        this.color = color;
+    }
 
+    public Shirt(ShirtMaterial material) {
+        this.material = material;
+    }
+
+    public ShirtColor getColor() {
         return color;
     }
 

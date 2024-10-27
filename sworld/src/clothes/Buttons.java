@@ -19,6 +19,10 @@ public class Buttons {
         this.haveSleevesButtons = haveSleevesButtons;
     }
 
+    public Buttons (boolean haveSleevesButtons) {
+        this.haveSleevesButtons = haveSleevesButtons;
+    }
+
     public ButtonSize getButtonSize() {
         return buttonSize;
     }
@@ -31,7 +35,7 @@ public class Buttons {
         return buttonMaterial;
     }
 
-    public Boolean getHaveSleevesButtons() {
+    public boolean getHaveSleevesButtons() {
         return haveSleevesButtons;
     }
 }
