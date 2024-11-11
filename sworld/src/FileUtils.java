@@ -2,10 +2,55 @@ import enums.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileUtils {
+
+    public static void writeToFile() {
+        try {
+
+            FileWriter userFile = new FileWriter("C:\\Users\\AnastasiaBabanskay\\ufile.txt");
+
+            shirtColor();
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            shirtSize();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            shirtMaterial();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            buttonSize();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            buttonColor();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            buttonMaterial();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            twoButtonsOnSleeves();
+            input = scanner.nextLine();
+            userFile.write(input + "\n");
+
+            userFile.close();
+
+        } catch (IOException e) {
+            System.out.println("Sorry, cannot write to file. Write something else");
+
+        }
+
+    }
 
     public static void shirtColor() {
         System.out.println("Choose the shirt color:");
