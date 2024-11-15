@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="negative">
+    <test name="negative">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="unit_test.TestFirstGroup"/>
+            <class name="unit_test.TestSecondGroup"/>
+        </classes>
+    </test>
+</suite>
